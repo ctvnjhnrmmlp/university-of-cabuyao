@@ -1,0 +1,675 @@
+/* Declarations */
+
+@font-face {
+	font-family: 'Mona Sans Black Wide';
+	src: url('fonts/mona-sans-black-wide.eot');
+	src: local('Mona Sans Black Wide'), local('Mona-Sans-Black-Wide'),
+		url('fonts/mona-sans-black-wide.eot?#iefix') format('embedded-opentype'),
+		url('fonts/mona-sans-black-wide.woff') format('woff'),
+		url('fonts/mona-sans-black-wide.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Mona Sans Regular Wide';
+	src: url('fonts/mona-sans-regular-wide.eot');
+	src: local('Mona Sans Regular Wide'), local('Mona-Sans-Regular-Wide'),
+		url('fonts/mona-sans-regular-wide.eot?#iefix') format('embedded-opentype'),
+		url('fonts/mona-sans-regular-wide.woff') format('woff'),
+		url('fonts/mona-sans-regular-wide.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Mona Sans Light Wide';
+	src: url('fonts/mona-sans-regular-wide.eot');
+	src: local('Mona Sans Light Wide'), local('Mona-Sans-Light-Wide'),
+		url('fonts/mona-sans-light-wide.eot?#iefix') format('embedded-opentype'),
+		url('fonts/mona-sans-light-wide.woff') format('woff'),
+		url('fonts/mona-sans-light-wide.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--white-one: #ffffff;
+	--yellow-one: #fed41ad1;
+	--green-one: #198754;
+	--green-two: #14c975;
+	--edge-radius-one: 30px;
+	--font-black-wide: 'Mona Sans Black Wide', system-ui, -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-regular-wide: 'Mona Sans Regular Wide', system-ui, -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-light-wide: 'Mona Sans Light Wide', system-ui, -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Base (Resets) */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin-block-end: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+	color: currentColor;
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+:target {
+	scroll-margin-block: 5ex;
+}
+
+/* Base (Actual) */
+
+*::selection {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+html {
+	text-size-adjust: none;
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+section,
+footer {
+	margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-black-wide);
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--green-two);
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+img {
+	border-radius: var(--edge-radius-one);
+}
+
+button {
+	border-radius: 100px;
+	background: #198754;
+	border: 0;
+	color: #ffffff;
+	font-family: 'Mona Sans Black Wide', system-ui, -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	cursor: pointer;
+	font-size: clamp(1.2rem, calc(1.3rem + 1.9vw), 2.64rem);
+	padding: 1vw 4vw;
+	text-transform: uppercase;
+	margin: 0 auto;
+	box-shadow: #198754 0px 4px 12px;
+}
+
+button:hover {
+	background: var(--green-two);
+}
+
+i {
+	color: var(--green-one);
+	font-size: clamp(2rem, calc(2.6rem + 1.9vw), 3rem);
+}
+
+i:hover {
+	color: var(--green-two);
+}
+
+iframe {
+	border-radius: var(--edge-radius-one);
+}
+
+.section-hero,
+.section-about,
+.section-software,
+footer {
+	width: max(90%, 10rem);
+}
+
+.container {
+	width: max(75%, 10rem);
+	margin: 0 auto;
+}
+
+.container--wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.section-title {
+	font-size: clamp(3rem, calc(3rem + 1.9vw), 4.5rem);
+	text-transform: uppercase;
+	color: var(--green-one);
+	text-align: center;
+}
+
+.section-title--about {
+	font-style: italic;
+}
+
+.section-title--history {
+	color: var(--white-one);
+	font-style: italic;
+}
+
+.section-title--philosophy {
+	color: var(--green-one);
+	font-style: italic;
+}
+
+.section-title--gallery {
+	color: var(--white-one);
+}
+
+.section-title--hollow {
+	color: #ffffff;
+	-webkit-text-stroke-width: 0.5px;
+	-webkit-text-stroke-color: #14c975;
+}
+
+.section-subtitle {
+	font-family: var(--font-regular-wide);
+	font-size: clamp(1.59rem, calc(2rem + 1.9vw), 2.64rem);
+	line-height: 1.4;
+	color: var(--green-one);
+	padding: 0 0 3vw 0;
+}
+
+.section-subtitle--about {
+	text-align: center;
+}
+
+.section-subtitle--history {
+	color: var(--white-one);
+	text-align: center;
+	font-style: italic;
+}
+
+.section-subtitle--philosophy {
+	color: var(--green-one);
+	text-align: center;
+	font-style: italic;
+}
+
+/* Nav */
+
+nav {
+	position: sticky;
+	margin: 1vw 0 0 0;
+	width: 100%;
+	padding-top: 1rem;
+	top: 0;
+}
+
+.nav-wrapper {
+	padding: 1vw 0 1vw 0;
+	display: flex;
+	justify-content: space-evenly;
+	background: rgba(255, 255, 255, 0.756);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 10px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.nav-link {
+	font-size: clamp(1rem, calc(-1.5rem + 2.8vw), 1.5rem);
+	font-family: var(--font-black-wide);
+	color: var(--green-one);
+}
+
+/* Section (Hero) */
+
+.section-hero {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	align-items: center;
+}
+
+.hero-content {
+	gap: 1.3rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.hero-title {
+	font-size: clamp(7.27rem, calc(9.75rem + 2.56vw), 11.58rem);
+	letter-spacing: -5px;
+	color: var(--green-one);
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.hero-subtitle {
+	font-family: var(--font-light-wide);
+	font-size: clamp(1.59rem, calc(2rem + 1.9vw), 2.64rem);
+	text-transform: none;
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	color: var(--green-one);
+}
+
+/* Section (About) */
+
+.section-about {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	padding: 30vh 0 30vh 0;
+}
+
+.card-about {
+	box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+		rgba(17, 17, 26, 0.1) 0px 0px 8px;
+	padding: 0 3vw 4vw 3vw;
+	border-radius: var(--edge-radius-one);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.card-history {
+	background: var(--green-one);
+	border-radius: var(--edge-radius-one);
+	padding: 0 3vw 2vw 3vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-philosophy {
+	background: var(--yellow-one);
+	border-radius: var(--edge-radius-one);
+	padding: 0 3vw 2vw 3vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Section (Gallery) */
+
+.section-gallery {
+	padding: 30vh 0 30vh 0;
+	background: #198754;
+	display: flex;
+	flex-direction: column;
+	gap: 4vw;
+}
+
+/* .section--features {
+	padding: 10vh 0 10vh 0;
+} */
+
+/* Section (contact) */
+
+.section-contact {
+	padding: 30vh 0 30vh 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.container-contact {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-logo {
+	margin: 0 auto;
+}
+
+.subtitle-contact {
+	font-family: var(--font-black-wide);
+	font-size: clamp(3rem, calc(3rem + 1.9vw), 4.04rem);
+	text-transform: none;
+	text-align: center;
+}
+
+.contact-links {
+	display: flex;
+	justify-content: center;
+	gap: 4vw;
+	padding: 3vw 0 0 0;
+}
+
+/* Section (Capabilities) */
+
+.section-gallery {
+	padding: 5vh 0 14vh 0;
+	background: var(--yellow-one);
+	overflow-x: hidden;
+	overflow-y: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.capabilities-badge,
+.gallery-badge {
+	font-style: italic;
+	color: #ffffff;
+	background: #198754;
+	text-transform: uppercase;
+	text-wrap: nowrap;
+	font-size: clamp(3rem, calc(3rem + 1.9vw), 4.5rem);
+}
+
+.container-gallery {
+	display: flex;
+	flex-direction: column;
+	gap: 5vw;
+	padding: 0 0 3vw 0;
+}
+
+.heading-gallery {
+	font-family: 'Mona Sans Black Wide', system-ui, -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: clamp(7.27rem, calc(9.75rem + 2.56vw), 11.58rem);
+	letter-spacing: -5px;
+	text-align: center;
+	color: #198754;
+	text-transform: uppercase;
+}
+
+/* Section (Gallery) */
+
+/* Section (Software) */
+.section-software {
+	display: flex;
+	flex-direction: column;
+	gap: 8vw;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.container-software {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.heading-software {
+	font-family: 'Mona Sans Black Wide', system-ui, -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: clamp(7.27rem, calc(9.75rem + 2.56vw), 11.58rem);
+	letter-spacing: -5px;
+	text-align: center;
+	color: #198754;
+	text-transform: uppercase;
+}
+.container-software-images {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.capabilities-badge-software {
+	background: var(--yellow-one);
+	color: var(--green-one);
+}
+
+/* Footer */
+
+footer {
+	padding: 0 0 2rem 0;
+}
+
+.footer-name {
+	font-size: clamp(1.59rem, calc(2rem + 1.9vw), 2.64rem);
+	font-style: italic;
+	text-align: center;
+	color: var(--green-one);
+	text-transform: uppercase;
+}
+
+/* Media Queries */
+
+@media all and (max-width: 167rem) {
+	.container {
+		width: 90%;
+	}
+
+	.hero-title,
+	.heading-software,
+	.heading-gallery {
+		font-size: clamp(4rem, calc(4.7rem + 1.9vw), 6.66rem);
+		letter-spacing: -3px;
+	}
+
+	i,
+	.hero-subtitle,
+	.section-subtitle {
+		font-size: clamp(1.39rem, calc(1.7rem + 1vw), 2.64rem);
+	}
+}
+
+@media all and (max-width: 50rem) {
+	.nav-wrapper {
+		padding: 2.5vw 0 2.5vw 0;
+	}
+
+	.section-hero {
+		gap: 3rem;
+	}
+
+	.section-about {
+		width: 100%;
+	}
+
+	.card-about {
+		padding: 0 3vw 12vw 3vw;
+	}
+
+	.contact-links {
+		gap: 10vw;
+	}
+
+	.container-software {
+		gap: 1rem;
+	}
+
+	.hero-title,
+	.heading-software,
+	.heading-gallery {
+		font-size: clamp(3rem, calc(3rem + 1.9vw), 4.04rem);
+		letter-spacing: -3px;
+	}
+
+	i,
+	.hero-subtitle,
+	.section-subtitle {
+		font-size: clamp(1.39rem, calc(1.7rem + 1vw), 2.64rem);
+	}
+}
+
+@media all and (max-width: 30rem) {
+	button {
+		font-size: clamp(0.9rem, calc(1rem + 1.9vw), 1.5rem);
+		padding: 2vw 6vw;
+	}
+
+	.hero-title,
+	.heading-software,
+	.heading-gallery {
+		font-size: clamp(1.59rem, calc(2rem + 1.9vw), 2.64rem);
+	}
+
+	.footer-name {
+		font-size: clamp(1rem, calc(1.2rem + 1vw), 2.64rem);
+	}
+
+	i,
+	.hero-subtitle,
+	.section-subtitle {
+		font-size: clamp(1rem, calc(1.2rem + 1vw), 2.64rem);
+	}
+}
+
+.gallery-images {
+	transition: all 0.5s ease-in-out;
+	column-gap: 30px;
+	column-fill: initial;
+}
+
+.gallery-images .container-gallery-image {
+	margin-bottom: 30px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.gallery-images.bordered {
+	column-rule: 1px solid #eee;
+	column-gap: 50px;
+}
+
+.gallery-images.bordered .container-gallery-image {
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid #eee;
+}
+
+.gallery-images.gutterless {
+	column-gap: 0;
+}
+
+.gallery-images.gutterless .container-gallery-image {
+	margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+	.gallery-images {
+		column-count: 2;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.desc {
+		font-size: 1.25em;
+	}
+
+	.intro {
+		letter-spacing: 1px;
+	}
+
+	.gallery-images {
+		column-count: 3;
+	}
+}
